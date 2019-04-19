@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Controller.cs" />
     <Compile Include="Classes\Directory.cs" />
     <Compile Include="Classes\DiskItem.cs" />
     <Compile Include="Classes\File.cs" />

@@ -14,7 +14,7 @@ namespace Commander_Jr.Classes
 
         public String getFileExtension(String path)
         {
-            return path.Substring(path.LastIndexOf(@".") + 1); 
+            return path.Substring(path.LastIndexOf(@".") + 1);
         }
         public File(String path) : base(path)
         {
