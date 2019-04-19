@@ -1,0 +1,56 @@
+﻿<Window x:Class="Commander_Jr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Commander_Jr"
+        mc:Ignorable="d"
+        Title="Totally Not Total Commander" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Menu VerticalAlignment="Top" Height="20" DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Pack" Click="notYetImplemeted"/>
+                <MenuItem Header="Unpack" Click="notYetImplemeted"/>
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="Student" Click="aboutPage"/>
+            </MenuItem>
+        </Menu>
+        <!--THE MAIN GRID THAT IS USED TO DISPLAY THE LIST OF FOLDERS AND FILES-->
+        <Grid x:Name="mainGrid" Margin="0,20,0,50" Background="#fff">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="col1"/>
+                <ColumnDefinition x:Name="col2"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="row1"/>
+                <RowDefinition x:Name="row2"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <!--GRID USED IN THE CREATION OF THE BUTTONS SHOWN AT THE BOTTOM OF THE MAIN WINDOW-->
+        <Grid Margin="0,0,0,20" VerticalAlignment="Bottom" Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="F3 View" Grid.Column="0" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F4 View" Grid.Column="1" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F5 View" Grid.Column="2" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F6 View" Grid.Column="3" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F7 View" Grid.Column="4" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F8 View" Grid.Column="5" Focusable="False" Click="notYetImplemeted"/>
+        </Grid>
+        <!--STATUS BAR THAT SHOWS THE CURRENT DATE-->
+        <StatusBar Height="20" VerticalAlignment="Bottom">
+            <StatusBarItem Height="20" VerticalAlignment="Bottom">
+                <TextBlock Name="lblStatus"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+    </Grid>
+</Window>
