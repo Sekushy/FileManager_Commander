@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Directory.cs" />
     <Compile Include="Classes\DiskItem.cs" />
+    <Compile Include="Classes\File.cs" />
     <Compile Include="Classes\Utility.cs" />
     <Compile Include="SidePanel.xaml.cs">
       <DependentUpon>SidePanel.xaml</DependentUpon>

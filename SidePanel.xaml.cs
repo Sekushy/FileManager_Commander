@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,12 +17,22 @@ namespace Commander_Jr
     /// </summary>
     public partial class SidePanel : UserControl
     {
+        Stack myStack = new Stack();
+        public Boolean isSideActive { get; set; }
+
         public SidePanel()
         {
             InitializeComponent();
+            String[] nameOfDrives;
+            nameOfDrives = System.IO.Directory.GetLogicalDrives();
+            foreach (String drives in nameOfDrives)
+            {
+                drive.Items.Add(drives);
+            }
+            drive.SelectedIndex = 0;
+            mainPath.Text = nameOfDrives[0];
+            myStack.Push(mainPath.Text);
         }
-
-        public Boolean isSideActive { get; set; }
 
         public SidePanel GetSidePanel()
         {
