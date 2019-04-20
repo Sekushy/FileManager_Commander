@@ -9,26 +9,27 @@ namespace Commander_Jr.Classes
     class Controller
     {
         DiskItem diskItem;
-        public String nameOfItem { get; set; }
-        public String extensionOfItem { get; set; }
+        public String Name { get; set; }
+        public String Type { get; set; }
         public String pathOfItem { get; set; }
         public Boolean isItemFile { get; set; }
-        public DateTime itemDateOfCreation { get; set; }
+        public DateTime DateOfCreation { get; set; }
 
         public Controller (DiskItem diskItem)
         {
             this.diskItem = diskItem;
-            nameOfItem = diskItem.getName();
+            Name = diskItem.getName();
             isItemFile = diskItem.isFile();
             pathOfItem = diskItem.path;
-            itemDateOfCreation = diskItem.dateOfCreation;
+            DateOfCreation = diskItem.dateOfCreation;
             if (diskItem is Directory)
             {
                 Directory temporary = (Directory)diskItem;
-                extensionOfItem = "<DIR>";
+                Type = "<DIR>";
             } else
             {
-
+                File temporary = (File)diskItem;
+                Type = temporary.extension;
             }
         }
     }

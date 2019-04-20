@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Commander_Jr.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Commander_Jr
         SidePanel sideRight;
         TabControl leftTab;
         TabControl rightTab;
+        Utility myUtility;
 
         public MainWindow() : base()
         {
@@ -60,6 +62,8 @@ namespace Commander_Jr
             mainGrid.Children.Add(rightTab);
             Grid.SetColumn(rightTab, 1);
             Grid.SetRowSpan(rightTab, 2);
+
+            myUtility = new Utility(leftTab, rightTab);
         }
 
         public void notYetImplemeted(object sender, RoutedEventArgs e)

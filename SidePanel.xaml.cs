@@ -30,6 +30,7 @@ namespace Commander_Jr
             drive.SelectedIndex = 0;
             mainPath.Text = nameOfDrives[0];
             myStack.Push(mainPath.Text);
+            RefreshListView();
         }
 
         public SidePanel GetSidePanel()
@@ -37,15 +38,13 @@ namespace Commander_Jr
             return this;
         }
 
-        private void MainListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void drive_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             String[] names;
             names = System.IO.Directory.GetLogicalDrives();
             mainPath.Text = names[drive.SelectedIndex];
             myStack.Clear();
             myStack.Push(mainPath.Text);
-            RefreshListView();
-            isSideActive = true;
         }
 
         private void MainListView_GotFocus(object sender, RoutedEventArgs e)
@@ -63,10 +62,9 @@ namespace Commander_Jr
             mainListView.ItemsSource = "";
             List<Classes.Controller> controllerList = new List<Classes.Controller>();
             Classes.Directory directories = new Classes.Directory(mainPath.Text);
-            List<Classes.DiskItem> diskItemsList = new List<Classes.DiskItem>();
+            List<Classes.DiskItem> diskItemsList = directories.getSubdirectories();
             foreach (var item in diskItemsList) controllerList.Add(new Classes.Controller(item));
             mainListView.ItemsSource = controllerList;
-            CollectionView views = (CollectionView)CollectionViewSource.GetDefaultView(mainListView.ItemsSource);
         }
     }
 }

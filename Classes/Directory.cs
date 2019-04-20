@@ -25,17 +25,13 @@ namespace Commander_Jr.Classes
             return false;
         }
 
-        public List<DiskItem> getSubItems()
+        public List<DiskItem> getSubdirectories()
         {
             List<DiskItem> diskItems = new List<DiskItem>();
             String[] directories = System.IO.Directory.GetDirectories(path);
             String[] files = System.IO.Directory.GetFiles(path);
-
-            foreach (var item in directories)
-            {
-                diskItems.Add(new Directory(item));
-            }
-
+            foreach (var item in directories) diskItems.Add(new Directory(item));
+            foreach (var item in files) diskItems.Add(new File(item));
             return diskItems;
         }
     }
