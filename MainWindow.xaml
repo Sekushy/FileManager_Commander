@@ -39,11 +39,11 @@
                 <ColumnDefinition Width="80*"/>
             </Grid.ColumnDefinitions>
             <Button Content="F3 View" Grid.Column="0" Focusable="False" Click="notYetImplemeted"/>
-            <Button Content="F4 View" Grid.Column="1" Focusable="False" Click="notYetImplemeted"/>
-            <Button Content="F5 View" Grid.Column="2" Focusable="False" Click="notYetImplemeted"/>
-            <Button Content="F6 View" Grid.Column="3" Focusable="False" Click="notYetImplemeted"/>
-            <Button Content="F7 View" Grid.Column="4" Focusable="False" Click="notYetImplemeted"/>
-            <Button Content="F8 View" Grid.Column="5" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F4 Edit" Grid.Column="1" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F5 Copy" Grid.Column="2" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F6 Move" Grid.Column="3" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="F7 New Folder" Grid.Column="4" Focusable="False" Click="notYetImplemeted"/>
+            <Button Content="Alt + F4 Exit" Grid.Column="5" Focusable="False" Click="notYetImplemeted"/>
         </Grid>
         <!--STATUS BAR THAT SHOWS THE CURRENT DATE-->
         <StatusBar Height="20" VerticalAlignment="Bottom">

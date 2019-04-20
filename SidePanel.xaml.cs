@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -57,6 +58,33 @@ namespace Commander_Jr
 
         }
 
+        private void OpenItem(object sender, MouseButtonEventArgs e) 
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                Classes.Controller selectedItem = (Classes.Controller)mainListView.SelectedItem;
+                if (selectedItem.isItemFile)
+                {
+                    Process.Start(selectedItem.pathOfItem);
+                } else
+                {
+                    mainPath.Text = selectedItem.pathOfItem;
+                    myStack.Push(mainPath.Text);
+                    RefreshListView();
+                }
+            }
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (myStack.Count > 1)
+            {
+                myStack.Pop();
+                mainPath.Text = myStack.Peek().ToString();
+                RefreshListView();
+            }
+        }
+
         public void RefreshListView()
         {
             mainListView.ItemsSource = "";
@@ -66,5 +94,6 @@ namespace Commander_Jr
             foreach (var item in diskItemsList) controllerList.Add(new Classes.Controller(item));
             mainListView.ItemsSource = controllerList;
         }
+
     }
 }
